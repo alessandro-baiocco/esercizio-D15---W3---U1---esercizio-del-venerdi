@@ -324,7 +324,7 @@ console.log("-----------------------------------------------------------");
 const rollTheDices = (n) => {
   let totSum = 0;
   const values = [];
-  for (i = 0; i < n; i++) {
+  for (let i = 0; i < n; i++) {
     const value = dice();
     values.push(value);
     totSum += value;
@@ -386,7 +386,7 @@ console.log("-----------------------------------------------------------");
 */
 let yearNewestMovie = 0;
 const newestMovie = () => {
-  for (i = 0; i < movies.length; i++) {
+  for (let i = 0; i < movies.length; i++) {
     if (movies[i].Year > yearNewestMovie) {
       yearNewestMovie = movies[i].Year;
     }
@@ -402,7 +402,7 @@ console.log("-----------------------------------------------------------");
 */
 const countMovies = () => {
   count = 0;
-  for (i = 0; i < movies.length; i++) {
+  for (let i = 0; i < movies.length; i++) {
     count += 1;
   }
   console.log("esercizio 13", count);
@@ -416,7 +416,7 @@ console.log("-----------------------------------------------------------");
 
 const yearArray = [];
 const onlyTheYears = () => {
-  for (j = 0; j < movies.length; j++) {
+  for (let j = 0; j < movies.length; j++) {
     yearArray.push(movies[j].Year);
   }
   console.log("esercizio 14 : ", yearArray);
@@ -431,7 +431,7 @@ console.log("-----------------------------------------------------------");
 */
 lastMilleniumMovies = [];
 const onlyInLastMillennium = () => {
-  for (k = 0; k < movies.length; k++) {
+  for (let k = 0; k < movies.length; k++) {
     if (movies[k].Year <= 2000 && movies[k].Year > 1000) {
       //maggiore di 1000 non serviva ma volevo metterlo
       lastMilleniumMovies.push(movies[k].Year);
@@ -461,7 +461,7 @@ console.log("-----------------------------------------------------------");
 */
 const found = [];
 const searchByTitle = (str) => {
-  for (l = 0; l < movies.length; l++) {
+  for (let l = 0; l < movies.length; l++) {
     if (movies[l].Title.search(str) !== -1) {
       found.push(movies[l]);
     }
@@ -478,7 +478,7 @@ console.log("-----------------------------------------------------------");
 const match = [];
 const unmatch = [];
 const searchAndDivide = (str) => {
-  for (l = 0; l < movies.length; l++) {
+  for (let l = 0; l < movies.length; l++) {
     if (movies[l].Title.search(str) !== -1) {
       match.push(movies[l]);
     } else {
@@ -496,23 +496,23 @@ console.log("-----------------------------------------------------------");
 */
 const removeIndex = (num) => {
   if (num === 0) {
-    for (p = 0; p < movies.length; p++) {
+    for (let p = 0; p < movies.length; p++) {
       delete movies[p].Title;
     }
   } else if (num === 1) {
-    for (p = 0; p < movies.length; p++) {
+    for (let p = 0; p < movies.length; p++) {
       delete movies[p].Year;
     }
   } else if (num === 2) {
-    for (p = 0; p < movies.length; p++) {
+    for (let p = 0; p < movies.length; p++) {
       delete movies[p].Type;
     }
   } else if (num === 3) {
-    for (p = 0; p < movies.length; p++) {
+    for (let p = 0; p < movies.length; p++) {
       delete movies[p].imdbID;
     }
   } else if (num === 4) {
-    for (p = 0; p < movies.length; p++) {
+    for (let p = 0; p < movies.length; p++) {
       delete movies[p].Poster;
     }
   }
@@ -598,17 +598,25 @@ console.log("-----------------------------------------------------------");
 
 */
 console.log("esercizio 27 :");
+// const halfTree = (num) => {
+//   for (let i = 0; i <= num; i++) {
+//     let star = "";
+//     for (let j = 0; j <= i; j++) {
+//       star += "*";
+//     }
+//     console.log(star);
+//   }
+// };
+
 const halfTree = (num) => {
-  for (let i = 0; i <= num; i++) {
-    let star = "";
-    for (let j = 0; j <= i; j++) {
-      star += "*";
-    }
-    console.log(star);
+  let row = "";
+  for (let i = 0; i < num; i++) {
+    row += "*".repeat(i + 1) + `\n`;
   }
+  console.log(row);
 };
 
-halfTree(5);
+halfTree(3);
 
 console.log("-----------------------------------------------------------");
 /* ESERCIZIO 28
@@ -622,8 +630,13 @@ console.log("-----------------------------------------------------------");
   *****
 
 */
-const tree = (num) => {};
-
+const tree = (num) => {
+  let row = "";
+  for (let i = 0; i < num; i++) {
+    row += " ".repeat(num - i) + "*" + "*".repeat(i * 2) + `\n`;
+  }
+  console.log(row);
+};
 tree(3);
 
 console.log("-----------------------------------------------------------");
