@@ -321,6 +321,7 @@ console.log("-----------------------------------------------------------");
   }
 */
 
+const diceobj = {};
 const rollTheDices = (n) => {
   let totSum = 0;
   const values = [];
@@ -328,8 +329,10 @@ const rollTheDices = (n) => {
     const value = dice();
     values.push(value);
     totSum += value;
+    diceobj.sum = totSum;
+    diceobj.values = values;
   }
-  console.log("esercizio 8", totSum, values);
+  console.log("esercizio 8", diceobj);
 };
 
 rollTheDices(3);
