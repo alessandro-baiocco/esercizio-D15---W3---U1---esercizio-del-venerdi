@@ -598,15 +598,6 @@ console.log("-----------------------------------------------------------");
 
 */
 console.log("esercizio 27 :");
-// const halfTree = (num) => {
-//   for (let i = 0; i <= num; i++) {
-//     let star = "";
-//     for (let j = 0; j <= i; j++) {
-//       star += "*";
-//     }
-//     console.log(star);
-//   }
-// };
 
 const halfTree = (num) => {
   let row = "";
