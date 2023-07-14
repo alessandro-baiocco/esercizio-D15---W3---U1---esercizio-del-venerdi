@@ -353,17 +353,17 @@ console.log("-----------------------------------------------------------");
   Scrivi una funzione chiamata "isTodayMyBirthday" che deve ritornare true se oggi è il tuo compleanno, falso negli altri casi.
 */
 
-const isTodayMyBirthday = () => {
+const isTodayMyBirthday = (day, month) => {
   numberOfDay = today.getDate();
   numberOfMonth = today.getMonth();
-  if (numberOfDay === 5 && numberOfMonth === 9) {
-    console.log("esercizio 10 : ", true);
+  if (numberOfDay === day && numberOfMonth === month) {
+    console.log("esercizio 10 : ", true, "è il mio compleanno");
   } else {
-    console.log("esercizio 10: ", false);
+    console.log("esercizio 10: ", false, "non è il mio compleanno");
   }
 };
 
-isTodayMyBirthday();
+isTodayMyBirthday(5, 9);
 
 console.log("-----------------------------------------------------------");
 // Arrays & Oggetti
