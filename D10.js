@@ -247,7 +247,6 @@ console.log("-----------------------------------------------------------");
 
   Es.: onlyLetters("I have 4 dogs") => ritorna "I have dogs"
 */
-const numericNumber = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 const onlyLetters = (str) => {
   finalStr = str.replace(/[0-9]/g, "");
   console.log("esercizio 5", finalStr);
